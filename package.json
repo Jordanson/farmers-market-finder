@@ -1,33 +1,12 @@
 {
-  "name": "farmers-market-finder",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "body-parser": "~1.15.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
-    "express": "~4.13.4",
-    "jade": "~1.11.0",
-    "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0",
-    "mongoose"   : "~4.1.0",
-    "jsonwebtoken": "^5.0.2",
-    "method-override": "~2.1.2"
-  },
-  "description": "",
-  "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jordanson/farmers-market-finder.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Jordanson/farmers-market-finder/issues"
-  },
-  "homepage": "https://github.com/Jordanson/farmers-market-finder#readme",
-  "devDependencies": {}
+    "name": "MeanMapsApp",
+    "main": "server.js",
+    "dependencies" : {
+        "express"    : "~4.7.2",
+        "mongoose"   : "~4.1.0",
+        "morgan"     : "~1.2.2",
+        "body-parser": "~1.5.2",
+        "jsonwebtoken": "^5.0.2",
+        "method-override": "~2.1.2"
+    }
 }
