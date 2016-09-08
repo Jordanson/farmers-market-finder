@@ -104,4 +104,19 @@ module.exports = function(app) {
                 res.json(users);
         });
     });
+
+    // DELETE Routes (Dev Only)
+    // --------------------------------------------------------
+    // Delete a User off the Map based on objID
+    app.delete('/users/:objID', function(req, res){
+        var objID = req.params.objID;
+        var update = req.body;
+
+        User.findByIdAndRemove(objID, update, function(err, user){
+            if(err)
+                res.send(err);
+            else
+                res.json(req.body);
+        });
+    });
 };

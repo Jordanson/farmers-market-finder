@@ -46,5 +46,20 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
             reqVerified: $scope.formData.verified
         };
 
-// Pass the filtered results to the Google Map Service and refresh the map
-gservice.refresh(queryBody.latitude, queryBody.longitude, queryResults);
+        // Post the queryBody to the /query POST route to retrieve the filtered results
+        $http.post('/query', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+
+                // Pass the filtered results to the Google Map Service and refresh the map
+                gservice.refresh(queryBody.latitude, queryBody.longitude, queryResults);
+
+                // Count the number of records retrieved for the panel-footer
+                $scope.queryCount = queryResults.length;
+            })
+            .error(function(queryResults){
+                console.log('Error ' + queryResults);
+            })
+    };
+});
