@@ -97,7 +97,7 @@ angular.module('gservice', [])
             this.message = message;
             this.username = username;
             this.gender = gender;
-            this.age = age;
+            this.zip = zip;
             this.favlang = favlang
         };
 
