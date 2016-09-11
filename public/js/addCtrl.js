@@ -10,8 +10,8 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     var long = 0;
 
     // Set initial coordinates to the center of the US
-    $scope.formData.longitude = -98.350;
-    $scope.formData.latitude = 39.500;
+    $scope.formData.longitude = -84.366;
+    $scope.formData.latitude = 33.772;
 
     // Get User's actual coordinates based on HTML5 at window load
     geolocation.getLocation().then(function(data){
@@ -22,9 +22,6 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         // Display coordinates in location textboxes rounded to three decimal points
         $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
         $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
-
-        // Display message confirming that the coordinates verified.
-        $scope.formData.htmlverified = "Yep (Thanks for giving us real data!)";
 
         gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
 
@@ -40,7 +37,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         $scope.$apply(function(){
             $scope.formData.latitude = parseFloat(gservice.clickLat).toFixed(3);
             $scope.formData.longitude = parseFloat(gservice.clickLong).toFixed(3);
-            $scope.formData.htmlverified = "Nope (Thanks for spamming my map...)";
+            $scope.formData.htmlverified = "I can't tell where you are";
         });
     });
 
@@ -51,7 +48,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
 
             $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
             $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
-            $scope.formData.htmlverified = "Yep (Thanks for giving us real data!)";
+            $scope.formData.htmlverified = "Thanks! I can tell where you are now";
             gservice.refresh(coords.lat, coords.long);
         });
     };
@@ -62,9 +59,6 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         // Grabs all of the text box fields
         var userData = {
             username: $scope.formData.username,
-            gender: $scope.formData.gender,
-            age: $scope.formData.age,
-            favlang: $scope.formData.favlang,
             location: [$scope.formData.longitude, $scope.formData.latitude],
             htmlverified: $scope.formData.htmlverified
         };

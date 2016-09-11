@@ -16,9 +16,9 @@ angular.module('gservice', [])
         var lastMarker;
         var currentSelectedMarker;
 
-        // User Selected Location (initialize to center of America)
-        var selectedLat = 39.50;
-        var selectedLong = -98.35;
+        // User Selected Location (initialize to Ponce City Market)
+        var selectedLat = 33.772;
+        var selectedLong = -84.366;
 
         // Functions
         // --------------------------------------------------------------
@@ -97,7 +97,7 @@ angular.module('gservice', [])
             this.message = message;
             this.username = username;
             this.gender = gender;
-            this.age = age;
+            this.zip = zip;
             this.favlang = favlang
         };
 
@@ -112,7 +112,7 @@ angular.module('gservice', [])
 
                 // Create a new map and place in the index.html page
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 3,
+                    zoom: 11,
                     center: myLatLng
                 });
             }

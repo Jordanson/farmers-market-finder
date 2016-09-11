@@ -70,31 +70,6 @@ module.exports = function(app) {
 
         }
 
-        // ...include filter by Gender (all options)
-        if(male || female || other){
-            query.or([{ 'gender': male }, { 'gender': female }, {'gender': other}]);
-        }
-
-        // ...include filter by Min Age
-        if(minAge){
-            query = query.where('age').gte(minAge);
-        }
-
-        // ...include filter by Max Age
-        if(maxAge){
-            query = query.where('age').lte(maxAge);
-        }
-
-        // ...include filter by Favorite Language
-        if(favLang){
-            query = query.where('favlang').equals(favLang);
-        }
-
-        // ...include filter for HTML5 Verified Locations
-        if(reqVerified){
-            query = query.where('htmlverified').equals("Yep (Thanks for giving us real data!)");
-        }
-
         // Execute Query and Return the Query Results
         query.exec(function(err, users){
             if(err)
