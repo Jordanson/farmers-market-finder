@@ -32,9 +32,6 @@
 </head>
 
 <body>
-<!--[if lt IE 10]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
 
 <div class="container">
     <!-- Header Menu. Note use of headerCtrl -->
@@ -42,9 +39,12 @@
 
         <!-- Header items are made active upon selection -->
         <ul class="nav nav-pills pull-right">
-            <li ng-class="{ active: isActive('/join')}"><a href="/#/join">Join the Search</a></li>
-            <li ng-class="{ active: isActive('/find')}"><a href="/#/find">Find Your Market</a></li>
-            <li ng-class="{ active: isActive('/add')}"><a href="/#/find">Add Market</a></li>
+        <li ng-class="{ active: isActive('/find')}"><a href="/#/find">Find Your Market</a></li>
+        <li ng-class="{ active: isActive('/join')}"><a href="/#/join">Add Market</a></li>
+        <li ng-class="{ active: isActive('/market')}"><a href="/#/market">Market Page</a></li>
+        <li ng-class="{ active: isActive('/error')}"><a href="/#/error">Guest Error</a></li>
+        <li ng-class="{ active: isActive('/uerror')}"><a href="/#/uerror">User Error</a></li>
+        <li ng-class="{ active: isActive('/created')}"><a href="/#/created">Confirmed Created</a></li>
         </ul>
 
         <!-- Header Title -->
@@ -72,6 +72,6 @@
     </div>
 
 </div>
-
 </body>
+
 </html>
