@@ -7,3 +7,4 @@ headerCtrl.controller('headerCtrl', function($scope, $location) {
         return viewLocation === $location.path();
     };
 });
+

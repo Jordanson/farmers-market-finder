@@ -14,7 +14,7 @@ var app = angular.module('meanMapApp', ['addCtrl', 'queryCtrl', 'headerCtrl', 'g
             controller: 'queryCtrl',
             templateUrl: 'partials/queryForm.html',
 
-        // Add Market Control Panel    
+        // Add Market Control Panel
         }).when('/add', {
             controller: 'marketCtrl',
             templateUrl: 'partials/addMarket.html',

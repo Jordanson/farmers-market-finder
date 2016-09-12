@@ -37,6 +37,7 @@ angular.module('gservice', [])
 
                 // Then convert the filtered results into map points.
                 locations = convertToMapPoints(filteredResults);
+<<<<<<< HEAD
 
                 // Then, initialize the map -- noting that a filter was used (to mark icons yellow)
                 initialize(latitude, longitude, true);
@@ -45,6 +46,16 @@ angular.module('gservice', [])
             // If no filter is provided in the refresh() call...
             else {
 
+=======
+
+                // Then, initialize the map -- noting that a filter was used (to mark icons yellow)
+                initialize(latitude, longitude, true);
+            }
+
+            // If no filter is provided in the refresh() call...
+            else {
+
+>>>>>>> ryans
                 // Perform an AJAX call to get all of the records in the db.
                 $http.get('/users').success(function(response){
 
@@ -186,4 +197,8 @@ angular.module('gservice', [])
             googleMapService.refresh(selectedLat, selectedLong));
 
         return googleMapService;
+<<<<<<< HEAD
     });
+=======
+    });
+>>>>>>> ryans

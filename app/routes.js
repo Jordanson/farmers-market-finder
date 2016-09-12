@@ -105,6 +105,18 @@ module.exports = function(app) {
         });
     });
 
+        }
+
+        // Execute Query and Return the Query Results
+        query.exec(function(err, users){
+            if(err)
+                res.send(err);
+            else
+                // If no errors, respond with a JSON of all users that meet the criteria
+                res.json(users);
+        });
+    });
+
     // DELETE Routes (Dev Only)
     // --------------------------------------------------------
     // Delete a User off the Map based on objID
@@ -120,3 +132,4 @@ module.exports = function(app) {
         });
     });
 };
+

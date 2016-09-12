@@ -22,5 +22,5 @@ module.exports = {
         url: "mongodb://localhost/MeanMapAppTest",
         port: 27017
     }
-
 };
+

@@ -1,5 +1,6 @@
 {
     "name": "meanMapApp",
+
     "main": "server.js",
     "dependencies" : {
         "express"    : "~4.7.2",

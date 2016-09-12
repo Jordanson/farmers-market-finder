@@ -25,9 +25,6 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
 
         // Display message confirming that the coordinates verified.
         $scope.formData.htmlverified = "Thanks! I can tell where you are now";
-
-        gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
-
     });
 
     // Functions
@@ -62,9 +59,6 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         // Grabs all of the text box fields
         var userData = {
             username: $scope.formData.username,
-            gender: $scope.formData.gender,
-            age: $scope.formData.age,
-            favlang: $scope.formData.favlang,
             location: [$scope.formData.longitude, $scope.formData.latitude],
             htmlverified: $scope.formData.htmlverified
         };
