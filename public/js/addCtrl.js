@@ -10,8 +10,8 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     var long = 0;
 
     // Set initial coordinates to the center of the US
-    var selectedLat = 33.772;
-    var selectedLong = -84.366;
+    $scope.formData.latitude = 39.500;
+    $scope.formData.longitude = -98.350;
     
     // Get User's actual coordinates based on HTML5 at window load
     geolocation.getLocation().then(function(data){
@@ -50,7 +50,12 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
 
         // Grabs all of the text box fields
         var userData = {
+            username: $scope.formData.username,
+            gender: $scope.formData.gender,
+            age: $scope.formData.age,
+            favlang: $scope.formData.favlang,
             location: [$scope.formData.longitude, $scope.formData.latitude],
+            htmlverified: $scope.formData.htmlverified
         };
 
         // Saves the user data to the db
