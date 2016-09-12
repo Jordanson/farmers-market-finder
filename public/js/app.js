@@ -16,6 +16,26 @@ var app = angular.module('meanMapApp', ['addCtrl', 'queryCtrl', 'geolocation', '
             controller: 'queryCtrl',
             templateUrl: 'partials/queryForm.html',
 
+        // Market Profile Control Panel
+        }).when('/market', {
+            controller: 'marketCtrl',
+            templateUrl: 'partials/marketForm.html',
+
+        // Guest Error Page Control Panel
+        }).when('/error', {
+            controller: 'errorCtrl',
+            templateUrl: 'partials/errorForm.html',
+
+        // User Error Page Control Panel
+        }).when('/uerror', {
+            controller: 'uerrorCtrl',
+            templateUrl: 'partials/uerrorForm.html',
+
+        // Market Created Control Panel
+        }).when('/created', {
+            controller: 'createdCtrl',
+            templateUrl: 'partials/createdForm.html',
+
             // All else forward to the Join Team Control Panel
-        }).otherwise({redirectTo:'/join'})
+        }).otherwise({redirectTo:'/find'})
     });

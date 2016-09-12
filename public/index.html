@@ -5,7 +5,7 @@
 <html class="no-js" ng-app="meanMapApp">
 <head>
     <meta charset="utf-8">
-    <title>Scotch MEAN Map</title>
+    <title>FM-Map</title>
     <meta name="description" content="An example demonstrating Google Map integration with MEAN Apps">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="style.css"/>
 
     <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrlHzIkVBLzvlrhcKKWnNLNc0RjkrGLuA
-"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrlHzIkVBLzvlrhcKKWnNLNc0RjkrGLuA"></script>
     <!-- Modernizr -->
     <script src="../bower_components/modernizr/bin/modernizr"></script>
     <!-- JS Source -->
@@ -35,10 +34,14 @@
     <div class="header">
         <ul class="nav nav-pills pull-right">
             <!-- Links to the two menu views included -->
-            <li active><a href="/#/join">Join the Team</a></li>
-            <li disabled><a href="/#/find">Find Teammates</a></li>
+        <li ng-class="{ active: isActive('/find')}"><a href="/#/find">Find Your Market</a></li>
+        <li ng-class="{ active: isActive('/join')}"><a href="/#/join">Add Market</a></li>
+        <li ng-class="{ active: isActive('/market')}"><a href="/#/market">Market Page</a></li>
+        <li ng-class="{ active: isActive('/error')}"><a href="/#/error">Guest Error</a></li>
+        <li ng-class="{ active: isActive('/uerror')}"><a href="/#/uerror">User Error</a></li>
+        <li ng-class="{ active: isActive('/created')}"><a href="/#/created">Confirmed Created</a></li>
         </ul>
-        <h3 class="text-muted">The Scotch MEAN MapApp</h3>
+        <h3 class="text-muted">Farmer's Market Finder</h3>
     </div>
     <!-- Map and Side Panel -->
     <div class="row content">
@@ -53,8 +56,8 @@
     <hr/>
     <!-- Footer -->
     <div class="footer">
-        <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by Ahmed Haque for Scotch IO -
-            <a href="https://scotch.io/">App Tutorial</a> | <a href="https://github.com/afhaque/MeanMapAppV2.0">Github Repo</a></p>
+        <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by Jordan, Ryan, Nate, and Evan
+        <a href="https://github.com/Jordanson/farmers-market-finder">Github Repo</a></p>
     </div>
 </div>
 </body>
