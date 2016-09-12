@@ -38,11 +38,6 @@
                     <label for="distance">Max. Distance (miles)</label>
                     <input type="text" class="form-control" id="distance" placeholder="50" ng-model="formData.distance">
                 </div>
-                <div class="form-group">
-                    <!-- Note RefreshLoc button tied to addCtrl. This requests a refresh of the HTML5 verified location. -->
-                <label for="verified">Verified Location? <span><button ng-click="refreshLoc()" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
-                    <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly>
-                </div>
 
                 <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
                 <button type="submit" class="btn btn-danger btn-block" ng-click="queryUsers()">Search</button>
@@ -51,7 +46,7 @@
 
         <!-- Footer panel for displaying count. Note how it will only display if queryCount is greater than 0 -->
         <div ng-show="queryCount>0" class="panel-footer">
-            <p class="text-center">Hot Dang! We Found {{queryCount}} Teammates.</p>
+            <p class="text-center">Yeah! You Found {{queryCount}} Markets.</p>
         </div>
     </div>
 </div>
