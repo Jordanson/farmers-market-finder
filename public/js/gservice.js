@@ -11,8 +11,8 @@ angular.module('gservice', [])
         var locations = [];
 
         // Selected Location (initialize to center of America)
-        var selectedLat = 33.772;
-        var selectedLong = -84.366;
+        var selectedLat = 39.50;
+        var selectedLong = -98.35;
     
         // Handling Clicks and location selection
         googleMapService.clickLat  = 0;
@@ -102,7 +102,7 @@ var initialize = function(latitude, longitude, filter) {
 
         // Create a new map and place in the index.html page
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 11,
+            zoom: 3,
             center: myLatLng
         });
     }
