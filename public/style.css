@@ -1,0 +1,47 @@
+div {
+  border-radius: 5px;
+}
+
+body {
+  font-family: 'Oswald', serif;
+  background-color: #ffc266;
+  background-image: url(http://smithmeadows.com/wp-content/uploads/2014/06/peaches.jpg);
+  background-size: cover;
+  background-image: opacity;
+}
+
+.navbar {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(248, 248, 248, .2);
+}
+
+.navbar-brand {
+  font-family: 'Yatra One', serif;
+  font-size: 36px;
+  color: white !important;
+  text-shadow: 2px 2px #000000;
+}
+
+.glyphicon.glyphicon-grain {
+  color: white;
+}
+
+.btn-group-xs {
+  padding-right: 30px;
+}
+
+.footer {
+  background-color: rgba(248, 248, 248, .2);
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px #000000;
+}
+
+#map {
+  width: 645px;
+  height: 645px;
+}
+
+
