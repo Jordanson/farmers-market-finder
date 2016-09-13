@@ -69,4 +69,29 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
                 console.log('Error: ' + data);
             });
     };
+
+    function removePin() {
+        console.log('baffle');
+
+        // Grabs all of the text box fields
+        var contentString1 = {
+            username: $scope.formData.username,
+            favlang: $scope.formData.favlang,
+        };
+
+        // Deletes the user data from the db
+        $http.delete('/users', contentString1)
+            .success(function (data) {
+             
+                // Once complete, clear the form (except location)
+                $scope.formData.username = "";
+                $scope.formData.favlang = "";
+                
+            // Refresh the map with new data
+            gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+            })
+            .error(function (data) {
+                console.log('Error: ' + data);
+            });
+    }; 
 });

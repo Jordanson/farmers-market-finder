@@ -67,10 +67,11 @@ googleMapService.refresh = function(latitude, longitude, filteredResults){
                 var user = response[i];
 
                 // Create popup windows for each record
-                var  contentString =
+                var contentString =
                     '<p><b>Name</b>: ' + user.username +
                     '<br><b>Address</b>: ' + user.favlang +
-                    '</p>';
+                    '<br><button type="submit" class="btn btn-danger btn-xs" ng-click="removePin()">Delete</button><br>'
+                    '</p>'
 
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
                 locations.push({
