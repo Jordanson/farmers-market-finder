@@ -1,1 +1,13 @@
+.navbar {
+  padding: 10px;
+}
 
+.footer {
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+#map {
+  width:645px;
+  height:645px;
+}

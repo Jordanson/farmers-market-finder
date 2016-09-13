@@ -32,19 +32,21 @@
 <!-- Removed ng-controller. Now this will be handled in app.js -->
 <body>
 <div class="container">
-    <div class="header">
-        <ul class="nav nav-pills pull-right">
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-grain"></span> Farmer's Market Finder</a>
             <!-- Links to the two menu views included -->
-            <li active><a href="/#/join">Join Today</a></li>
-            <li disabled><a href="/#/find">Find Markets</a></li>
-        </ul>
-        <h3 class="text-muted">Farmer's Market Finder</h3>
+            <ul class="nav nav-pills">
+              <li role="presentation"><a href="/#/join">Join Today</a></li>
+              <li role="presentation"><a href="/#/find">Find Markets</a></li>
+            </ul>
+        </div>
     </div>
     <!-- Map and Side Panel -->
     <div class="row content">
         <!-- Google Map -->
         <div class="col-md-7">
-            <div id="map" style="width:645px; height:645px"></div>
+            <div id="map"></div>
         </div>
         <!-- Side Panel -- Now Handled by ng-view -->
         <div ng-view></div>
@@ -52,7 +54,7 @@
     <hr/>
     <!-- Footer -->
     <div class="footer">
-        <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by Evan, Jordan, Ryan, and Nate for WDI 7 -
+        <p class="text-center"><span class="glyphicon glyphicon-hand-right"></span> Created by Evan, Jordan, Ryan, and Nate for WDI 7 -
             <a href="#">Github Repo</a></p>
     </div>
 </div>
