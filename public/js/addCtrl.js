@@ -39,23 +39,23 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     });
 });
     
-    // Creates a new user based on the form fields
-    $scope.createUser = function() {
+    // Creates a new market based on the form fields
+    $scope.createMarket = function() {
 
 
         // Grabs all of the text box fields
-        var userData = {
-            username: $scope.formData.username,
+        var marketData = {
+            marketname: $scope.formData.marketname,
             address: $scope.formData.address,
             location: [$scope.formData.longitude, $scope.formData.latitude],
         };
 
-        // Saves the user data to the db
-        $http.post('/users', userData)
+        // Saves the market data to the db
+        $http.post('/markets', marketData)
             .success(function (data) {
 
                 // Once complete, clear the form (except location)
-                $scope.formData.username = "";
+                $scope.formData.marketname = "";
                 $scope.formData.address = "";
                 
             // Refresh the map with new data

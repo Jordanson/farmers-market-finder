@@ -29,7 +29,7 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
     });
 
     // Take query parameters and incorporate into a JSON queryBody
-    $scope.queryUsers = function(){
+    $scope.queryMarkets = function(){
 
         // Assemble Query Body
         queryBody = {

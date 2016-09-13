@@ -16,8 +16,8 @@
 
                 <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
                 <div class="form-group">
-                    <label for="username">Market Name </label>
-                    <input type="text" class="form-control" id="username" placeholder="Market of Deliciousness" ng-model="formData.username">
+                    <label for="marketname">Market Name </label>
+                    <input type="text" class="form-control" id="marketname" placeholder="Market of Deliciousness" ng-model="formData.marketname">
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>
@@ -27,8 +27,8 @@
                     <label for="distance">Max. Distance (miles)</label>
                     <input type="text" class="form-control" id="distance" placeholder="25" ng-model="formData.distance">
                 </div>
-                <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
-                <button type="submit" class="btn btn-danger btn-block" ng-click="queryUsers()">Search</button>
+                <!-- Query button. Note that its tied to queryMarkets () function from queryCtrl.  -->
+                <button type="submit" class="btn btn-danger btn-block" ng-click="queryMarkets()">Search</button>
             </form>
         </div>
 
