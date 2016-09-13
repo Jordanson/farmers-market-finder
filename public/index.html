@@ -5,13 +5,14 @@
 <html class="no-js" ng-app="meanMapApp">
 <head>
     <meta charset="utf-8">
-    <title>Farmer's Market Finder</title>
+    <title>Farmers Market Finder</title>
     <meta name="description" content="An example demonstrating Google Map integration with MEAN Apps">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Yatra One">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald">
     <link rel="stylesheet" href="style.css"/>
-
     <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrlHzIkVBLzvlrhcKKWnNLNc0RjkrGLuA
 "></script>
@@ -34,14 +35,15 @@
 <div class="container">
     <div class="navbar navbar-default navbar-static-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-grain"></span> Farmer's Market Finder</a>
+            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-grain"></span> Farmers Market Finder</a>
             <!-- Links to the two menu views included -->
-            <ul class="nav nav-pills">
-              <li role="presentation"><a href="/#/join">Join Today</a></li>
-              <li role="presentation"><a href="/#/find">Find Markets</a></li>
+            <ul class="nav nav-pills btn-group-xs pull-right" ng-init="style={'background-color' : '#ffc266'}">
+              <li role="presentation" class="btn btn-default navbar-btn" ng-style="style1" ng-click="style1=style; style2=null"><a href="/#/join">Join Today</a></li>
+              <li role="presentation" class="btn btn-default navbar-btn" ng-style="style2" ng-click="style2=style; style1=null"><a href="/#/find">Find Markets</a></li>
             </ul>
         </div>
     </div>
+    <hr/>
     <!-- Map and Side Panel -->
     <div class="row content">
         <!-- Google Map -->
@@ -54,7 +56,7 @@
     <hr/>
     <!-- Footer -->
     <div class="footer">
-        <p class="text-center"><span class="glyphicon glyphicon-hand-right"></span> Created by Evan, Jordan, Ryan, and Nate for WDI 7 -
+        <p class="text-center"><span class="glyphicon glyphicon-hand-right">&#160;</span> Created by Evan, Jordan, Ryan, and Nate for WDI 7 -
             <a href="#">Github Repo</a></p>
     </div>
 </div>
