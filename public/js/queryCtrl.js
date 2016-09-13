@@ -1,4 +1,3 @@
-// Creates the addCtrl Module and Controller. Note that it depends on 'geolocation' and 'gservice' modules.
 var queryCtrl = angular.module('queryCtrl', ['geolocation', 'gservice']);
 queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geolocation, gservice){
 
@@ -37,13 +36,7 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
             longitude: parseFloat($scope.formData.longitude),
             latitude: parseFloat($scope.formData.latitude),
             distance: parseFloat($scope.formData.distance),
-            male: $scope.formData.male,
-            female: $scope.formData.female,
-            other: $scope.formData.other,
-            minAge: $scope.formData.minage,
-            maxAge: $scope.formData.maxage,
             favlang: $scope.formData.favlang,
-            reqVerified: $scope.formData.verified
         };
 
         // Post the queryBody to the /query POST route to retrieve the filtered results
