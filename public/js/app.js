@@ -28,6 +28,6 @@ var app = angular.module('meanMapApp', ['addCtrl', 'queryCtrl', 'geolocation', '
             controller: 'createdCtrl',
             templateUrl: 'partials/createdForm.html',
 
-            // All else forward to the Join Team Control Panel
+            // All else forward to the Add Market Control Panel
         }).otherwise({redirectTo:'/find'})
     });

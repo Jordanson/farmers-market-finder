@@ -108,4 +108,15 @@ module.exports = function(app) {
             res.json(markets);
         });
     });
+    // DELETE Routes
+    app.delete ('/markets', function(req, res){
+
+        market.remove (function(err, markets){
+            if(err)
+                res.status(err);
+
+            // If no errors are found, it responds with a JSON of all markets
+            res.json(markets);
+        });
+    });
 };  

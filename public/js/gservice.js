@@ -20,7 +20,7 @@ angular.module('gservice', [])
         // Functions
         // --------------------------------------------------------------
         // Refresh the Map with new data. Takes three parameters (lat, long, and filtering results)
-googleMapService.refresh = function(latitude, longitude, filteredResults){
+    googleMapService.refresh = function(latitude, longitude, filteredResults){
 
     // Clears the holding array of locations
     locations = [];

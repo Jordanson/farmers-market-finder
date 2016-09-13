@@ -14,8 +14,8 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
         coords = {lat:data.coords.latitude, long:data.coords.longitude};
 
         // Set the latitude and longitude equal to the HTML5 coordinates
-        $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
-        $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
+        $scope.formData.longitude = parseFloat(coords.long).toFixed(11);
+        $scope.formData.latitude = parseFloat(coords.lat).toFixed(11);
     });
 
     // Get coordinates based on mouse click. When a click event is detected....
@@ -23,8 +23,8 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
 
         // Run the gservice functions associated with identifying coordinates
         $scope.$apply(function(){
-            $scope.formData.latitude = parseFloat(gservice.clickLat).toFixed(3);
-            $scope.formData.longitude = parseFloat(gservice.clickLong).toFixed(3);
+            $scope.formData.latitude = parseFloat(gservice.clickLat).toFixed(11);
+            $scope.formData.longitude = parseFloat(gservice.clickLong).toFixed(11);
         });
     });
 
