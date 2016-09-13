@@ -10,9 +10,9 @@ angular.module('gservice', [])
         // Array of locations obtained from API calls
         var locations = [];
 
-        // Selected Location (initialize to center of America)
-        var selectedLat = 39.50;
-        var selectedLong = -98.35;
+        // User Selected Location (initialize to Ponce City Market)
+        var selectedLat = 33.772;
+        var selectedLong = -84.366;
     
         // Handling Clicks and location selection
         googleMapService.clickLat  = 0;
@@ -68,10 +68,8 @@ googleMapService.refresh = function(latitude, longitude, filteredResults){
 
                 // Create popup windows for each record
                 var  contentString =
-                    '<p><b>Username</b>: ' + user.username +
-                    '<br><b>Age</b>: ' + user.age +
-                    '<br><b>Gender</b>: ' + user.gender +
-                    '<br><b>Favorite Language</b>: ' + user.favlang +
+                    '<p><b>Name</b>: ' + user.username +
+                    '<br><b>Address</b>: ' + user.favlang +
                     '</p>';
 
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
@@ -82,8 +80,6 @@ googleMapService.refresh = function(latitude, longitude, filteredResults){
                         maxWidth: 320
                     }),
                     username: user.username,
-                    gender: user.gender,
-                    age: user.age,
                     favlang: user.favlang
             });
         }

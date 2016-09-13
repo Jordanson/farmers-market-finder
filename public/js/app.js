@@ -16,6 +16,8 @@ var app = angular.module('meanMapApp', ['addCtrl', 'queryCtrl', 'geolocation', '
             controller: 'queryCtrl',
             templateUrl: 'partials/queryForm.html',
 
+        
+
             // All else forward to the Join Team Control Panel
-        }).otherwise({redirectTo:'/join'})
+        }).otherwise({redirectTo:'/find'})
     });
