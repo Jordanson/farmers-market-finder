@@ -1,4 +1,3 @@
-// Creates the market Ctrl Module and Controller. Note that it depends on 'geolocation' and 'gservice' modules.
 var marketCtrl = angular.module('marketCtrl', ['geolocation', 'gservice']);
 marketCtrl.controller('marketCtrl', function($scope, $log, $http, $rootScope, geolocation, gservice){
 

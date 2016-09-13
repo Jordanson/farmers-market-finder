@@ -1,4 +1,3 @@
-// Creates the addCtrl Module and Controller. Note that it depends on 'geolocation' and 'gservice' modules.
 var uerrorCtrl = angular.module('uerrorCtrl', ['geolocation', 'gservice']);
 uerrorCtrl.controller('uerrorCtrl', function($scope, $log, $http, $rootScope, geolocation, gservice){
 
