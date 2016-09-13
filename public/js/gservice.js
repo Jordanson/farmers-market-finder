@@ -68,8 +68,8 @@ googleMapService.refresh = function(latitude, longitude, filteredResults){
 
                 // Create popup windows for each record
                 var  contentString =
-                    '<p><b>Username</b>: ' + user.username +
-                    '<br><b>Favorite Language</b>: ' + user.favlang +
+                    '<p><b>Name</b>: ' + user.username +
+                    '<br><b>Address</b>: ' + user.favlang +
                     '</p>';
 
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
