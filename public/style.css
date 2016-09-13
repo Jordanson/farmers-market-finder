@@ -1,3 +1,7 @@
+div {
+  border-radius: 15px;
+}
+
 body {
   font-family: 'Oswald', serif;
   background-color: #ffc266;
@@ -7,6 +11,7 @@ body {
 
 .navbar {
   padding: 5px;
+  border-radius: 15px;
 }
 
 .navbar-brand {
