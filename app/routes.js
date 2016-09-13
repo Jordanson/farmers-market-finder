@@ -46,7 +46,7 @@ module.exports = function(app) {
             var lat             = req.body.latitude;
             var long            = req.body.longitude;
             var distance        = req.body.distance;
-            var favLang         = req.body.favlang;
+            var address         = req.body.address;
 
             // Opens a generic Mongoose Query. Depending on the post body we will...
             var query = User.find({});
@@ -61,9 +61,9 @@ module.exports = function(app) {
                     maxDistance: distance * 1609.34, spherical: true});
             }
 
-            // ...include filter by Favorite Language
-            if(favLang){
-                query = query.where('favlang').equals(favLang);
+            // ...include filter by Address
+            if(address){
+                query = query.where('address').equals(address);
             }
 
             // Execute Query and Return the Query Results

@@ -68,7 +68,8 @@ googleMapService.refresh = function(latitude, longitude, filteredResults){
                 // Create popup windows for each record
                 var  contentString =
                     '<p><b>Name</b>: ' + user.username +
-                    '<br><b>Address</b>: ' + user.favlang +
+                    '<br><b>Address</b>: ' + user.address +
+                    '<br><button type="submit" class="btn btn-primary btn-xs">Edit</button><button type="submit" class="btn btn-danger btn-xs">Delete</button><br>'
                     '</p>';
 
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
@@ -79,7 +80,7 @@ googleMapService.refresh = function(latitude, longitude, filteredResults){
                         maxWidth: 320
                     }),
                     username: user.username,
-                    favlang: user.favlang
+                    address: user.address
             });
         }
         // location is now an array populated with records in Google Maps format

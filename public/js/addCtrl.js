@@ -22,9 +22,6 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     $scope.formData.longitude = parseFloat(coords.long).toFixed(11);
     $scope.formData.latitude = parseFloat(coords.lat).toFixed(11);
 
-    // Display message confirming that the coordinates verified.
-    $scope.formData.htmlverified = "Yep (Thanks for giving us real data!)";
-
     gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
 
 });
@@ -49,7 +46,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         // Grabs all of the text box fields
         var userData = {
             username: $scope.formData.username,
-            favlang: $scope.formData.favlang,
+            address: $scope.formData.address,
             location: [$scope.formData.longitude, $scope.formData.latitude],
         };
 
@@ -59,7 +56,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
 
                 // Once complete, clear the form (except location)
                 $scope.formData.username = "";
-                $scope.formData.favlang = "";
+                $scope.formData.address = "";
                 
             // Refresh the map with new data
             gservice.refresh($scope.formData.latitude, $scope.formData.longitude);

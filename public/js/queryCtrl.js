@@ -36,7 +36,7 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
             longitude: parseFloat($scope.formData.longitude),
             latitude: parseFloat($scope.formData.latitude),
             distance: parseFloat($scope.formData.distance),
-            favlang: $scope.formData.favlang,
+            address: $scope.formData.address,
         };
 
         // Post the queryBody to the /query POST route to retrieve the filtered results
@@ -46,7 +46,7 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
             .success(function(queryResults){
 
                 // Pass the filtered results to the Google Map Service and refresh the map
-gservice.refresh(queryBody.latitude, queryBody.longitude, queryResults);
+                gservice.refresh(queryBody.latitude, queryBody.longitude, queryResults);
 
                 // Count the number of records retrieved for the panel-footer
                 $scope.queryCount = queryResults.length;
