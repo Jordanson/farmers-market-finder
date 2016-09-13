@@ -1,5 +1,5 @@
-var addCtrl = angular.module('addCtrl', ['geolocation', 'gservice']);
-addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, gservice){ 
+var deleteCtrl = angular.module('deleteCtrl', ['geolocation', 'gservice']);
+deleteCtrl.controller('deleteCtrl', function($scope, $http, $rootScope, geolocation, gservice){ 
 
     // Initializes Variables
     // ----------------------------------------------------------------------------
@@ -40,23 +40,11 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
 });
     
     // Creates a new market based on the form fields
-    $scope.createMarket = function() {
+    $scope.deleteMarket = function() {
 
-
-        // Grabs all of the text box fields
-        var marketData = {
-            marketname: $scope.formData.marketname,
-            address: $scope.formData.address,
-            location: [$scope.formData.longitude, $scope.formData.latitude],
-        };
-
-        // Saves the market data to the db
-        $http.post('/markets', marketData)
+        // Removes the market data to the db
+        $http.remove('/markets', marketData)
             .success(function (data) {
-
-                // Once complete, clear the form (except location)
-                $scope.formData.marketname = "";
-                $scope.formData.address = "";
                 
             // Refresh the map with new data
             gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
@@ -65,29 +53,4 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
                 console.log('Error: ' + data);
             });
     };
-
-    function removePin() {
-        console.log('baffle');
-
-        // Grabs all of the text box fields
-        var contentString1 = {
-            username: $scope.formData.username,
-            favlang: $scope.formData.favlang,
-        };
-
-        // Deletes the user data from the db
-        $http.delete('/users', contentString1)
-            .success(function (data) {
-             
-                // Once complete, clear the form (except location)
-                $scope.formData.username = "";
-                $scope.formData.favlang = "";
-                
-            // Refresh the map with new data
-            gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
-            })
-            .error(function (data) {
-                console.log('Error: ' + data);
-            });
-    }; 
 });

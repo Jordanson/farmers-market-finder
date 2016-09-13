@@ -1,4 +1,3 @@
-// Creates the created Ctrl Module and Controller. Note that it depends on 'geolocation' and 'gservice' modules.
 var createdCtrl = angular.module('createdCtrl', ['geolocation', 'gservice']);
 createdCtrl.controller('createdCtrl', function($scope, $log, $http, $rootScope, geolocation, gservice){
 
@@ -6,6 +5,16 @@ createdCtrl.controller('createdCtrl', function($scope, $log, $http, $rootScope, 
     // ----------------------------------------------------------------------------
     $scope.formData = {};
     var createdBody = {};
+
+    // Get User's actual coordinates based on HTML5 at window load
+    geolocation.getLocation().then(function(data){
+
+    // Set the latitude and longitude equal to the HTML5 coordinates
+    coords = {lat:data.coords.latitude, long:data.coords.longitude};
+
+    gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+
+});
 
     // Functions
     // ----------------------------------------------------------------------------

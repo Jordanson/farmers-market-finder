@@ -1,4 +1,3 @@
-// Creates the gservice factory. This will be the primary means by which we interact with Google Maps
 angular.module('gservice', [])
     .factory('gservice', function($rootScope, $http){
 
@@ -10,7 +9,7 @@ angular.module('gservice', [])
         // Array of locations obtained from API calls
         var locations = [];
 
-        // User Selected Location (initialize to Ponce City Market)
+        // Market Selected Location (initialize to Ponce City Market)
         var selectedLat = 33.772;
         var selectedLong = -84.366;
     
@@ -21,7 +20,7 @@ angular.module('gservice', [])
         // Functions
         // --------------------------------------------------------------
         // Refresh the Map with new data. Takes three parameters (lat, long, and filtering results)
-googleMapService.refresh = function(latitude, longitude, filteredResults){
+    googleMapService.refresh = function(latitude, longitude, filteredResults){
 
     // Clears the holding array of locations
     locations = [];
@@ -44,7 +43,7 @@ googleMapService.refresh = function(latitude, longitude, filteredResults){
     else {
 
         // Perform an AJAX call to get all of the records in the db.
-        $http.get('/users').success(function(response){
+        $http.get('/markets').success(function(response){
 
             // Then convert the results into map points
             locations = convertToMapPoints(response);
@@ -56,7 +55,7 @@ googleMapService.refresh = function(latitude, longitude, filteredResults){
 };
         // Private Inner Functions
         // --------------------------------------------------------------
-        // Convert a JSON of users into map points
+        // Convert a JSON of markets into map points
         var convertToMapPoints = function(response){
 
             // Clear the locations holder
@@ -64,24 +63,32 @@ googleMapService.refresh = function(latitude, longitude, filteredResults){
 
             // Loop through all of the JSON entries provided in the response
             for(var i= 0; i < response.length; i++) {
-                var user = response[i];
+                var market = response[i];
 
                 // Create popup windows for each record
+<<<<<<< HEAD
                 var contentString =
                     '<p><b>Name</b>: ' + user.username +
                     '<br><b>Address</b>: ' + user.favlang +
                     '<br><button type="submit" class="btn btn-danger btn-xs" ng-click="removePin()">Delete</button><br>'
                     '</p>'
+=======
+                var  contentString =
+                    '<p><b>Name</b>: ' + market.marketname +
+                    '<br><b>Address</b>: ' + market.address +
+                    '<br><button type="submit" class="btn btn-primary btn-xs">Edit</button><button type="submit" class="btn btn-danger btn-xs">Delete</button><br>'
+                    '</p>';
+>>>>>>> 314e46b65caecb6aa612d2e5d194cb74a3fad797
 
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
                 locations.push({
-                    latlon: new google.maps.LatLng(user.location[1], user.location[0]),
+                    latlon: new google.maps.LatLng(market.location[1], market.location[0]),
                     message: new google.maps.InfoWindow({
                         content: contentString,
                         maxWidth: 320
                     }),
-                    username: user.username,
-                    favlang: user.favlang
+                    marketname: market.marketname,
+                    address: market.address
             });
         }
         // location is now an array populated with records in Google Maps format
