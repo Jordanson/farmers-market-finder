@@ -5,8 +5,8 @@
 <html class="no-js" ng-app="meanMapApp">
 <head>
     <meta charset="utf-8">
-    <title>Scotch MEAN Map</title>
-    <meta name="description" content="An example demonstrating Google Map integration with MEAN Apps">
+    <title>Farmer's Market Finder</title>
+    <meta name="description" content="A simple app for finding user created locations">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
@@ -29,16 +29,17 @@
     <script src="js/queryCtrl.js"></script>    
 
 </head>
-<!-- Removed ng-controller. Now this will be handled in app.js -->
 <body>
 <div class="container">
     <div class="header">
-        <ul class="nav nav-pills pull-right">
-            <!-- Links to the two menu views included -->
-            <li active><a href="/#/join">Join the Team</a></li>
-            <li disabled><a href="/#/find">Find Teammates</a></li>
+        <ul class="nav nav-pills pull-right"></span>
+            <li active><a href="/#/find">Find Market</a></li>
+            <li disabled><a href="/#/join">Add Market</a></li>
+            <li disabled><a href="/#/market">Market</a></li>
+            <li disabled><a href="/#/uerror">UError</a></li>
+            <li disabled><a href="/#/created">Created</a></li>
         </ul>
-        <h3 class="text-muted">The Scotch MEAN MapApp</h3>
+        <h3 class="text-muted">Farmer's Market Finder</h3>
     </div>
     <!-- Map and Side Panel -->
     <div class="row content">
@@ -46,15 +47,13 @@
         <div class="col-md-7">
             <div id="map" style="width:645px; height:645px"></div>
         </div>
-        <!-- Side Panel -- Now Handled by ng-view -->
         <div ng-view></div>
 
     </div>
     <hr/>
     <!-- Footer -->
     <div class="footer">
-        <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by Ahmed Haque for Scotch IO -
-            <a href="https://scotch.io/">App Tutorial</a> | <a href="https://github.com/afhaque/MeanMapAppV2.0">Github Repo</a></p>
+        <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by Jordan, Ryan, and Evan | <a href="">Github Repo</a></p>
     </div>
 </div>
 </body>
