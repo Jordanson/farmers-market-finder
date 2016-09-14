@@ -12,7 +12,7 @@ This website uses user location verification and geolocation technologies to pro
 
 ## Screenshot
 
-[Screenshot](link)
+[Screenshot](http://i.imgur.com/mICDDYL.png)
 
 ## Technologies Used
 
@@ -43,9 +43,9 @@ This website uses user location verification and geolocation technologies to pro
 
 ## Wireframe 
 
-[Whiteboard](link)
+[Whiteboard](http://i.imgur.com/2vady4L.jpg)
 
-[Digital](link)
+[Digital](http://i.imgur.com/3vmAxz2.png)
 
 Link to our <b>[Mockingbird](https://gomockingbird.com/projects/flkrwxb)</b> Wireframe.
 
